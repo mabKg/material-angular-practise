@@ -10,8 +10,10 @@ import { ButtonComponent } from './material-design/button/button.component';
 import { BadgeComponent } from './material-design/badge/badge.component';
 import { SpinnetProgressComponent } from './material-design/spinnet-progress/spinnet-progress.component';
 import { NavBarComponent } from './material-design/nav-bar/nav-bar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './material-design/list/list.component';
+import { TabsComponent } from './tabs/tabs.component';
+import { CommonFormsComponent } from './common-forms/common-forms.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,8 @@ import { ListComponent } from './material-design/list/list.component';
     SpinnetProgressComponent,
     NavBarComponent,
     ListComponent,
+    TabsComponent,
+    CommonFormsComponent,
 
   ],
   imports: [
@@ -28,7 +32,8 @@ import { ListComponent } from './material-design/list/list.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

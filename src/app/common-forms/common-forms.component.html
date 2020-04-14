@@ -1,0 +1,77 @@
+<mat-form-field floatLabel="auto" hiderequiredmarker appearance="legacy">
+  <mat-label>name</mat-label>
+  <input matInput required>
+  <mat-hint align="end">Min 5 Characters</mat-hint>
+</mat-form-field>
+<br>
+<mat-form-field floatLabel="auto" hiderequiredmarker appearance="standard">
+  <mat-label>name</mat-label>
+  <input matInput required>
+  <mat-hint align="end">Min 5 Characters</mat-hint>
+</mat-form-field>
+<br>
+<mat-form-field floatLabel="auto" hiderequiredmarker appearance="fill">
+  <mat-label>name</mat-label>
+  <input matInput required>
+  <mat-hint align="end">Min 5 Characters</mat-hint>
+</mat-form-field>
+<br>
+<mat-form-field floatLabel="auto" hiderequiredmarker appearance="outline">
+  <mat-label>name</mat-label>
+  <input matInput required>
+  <mat-hint align="end">Min 5 Characters</mat-hint>
+</mat-form-field>
+<br>
+<mat-form-field>
+  <mat-select [(value)]="selectedValue" multiple>
+    <mat-label>Topic</mat-label>
+    <mat-option>None</mat-option>
+    <mat-optgroup label="Web">
+      <mat-option value="angular">Angular</mat-option>
+      <mat-option value="react">React</mat-option>
+      <mat-option value="vue">Vue</mat-option>
+    </mat-optgroup>
+    <br>
+<mat-label>Topic</mat-label>
+    <mat-option value="angular">Angular</mat-option>
+    <mat-option value="react">React</mat-option>
+    <mat-option value="vue">Vue</mat-option>
+
+  </mat-select>
+  {{ selectedValue }}
+</mat-form-field>
+<br>
+<h1>Auto Complete</h1>
+<form>
+  <mat-form-field>
+    <input type="text" matInput [matAutocomplete]="auto" [formControl]="myControl" />
+    <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of options" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+  </mat-form-field>
+</form>
+<br>
+<h1>Autocomplete Objects</h1>
+<form>
+  <mat-form-field>
+    <input type="text" matInput [matAutocomplete]="auto" />
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+    <mat-option *ngFor="let option of objectOptions" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+  </mat-form-field>
+</form>
+<br>
+<form>
+  <mat-form-field>
+    <input type="text"  matInput  [matAutocomplete]="auto" [formControl]="myControl">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
